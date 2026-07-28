@@ -18,6 +18,7 @@ const config: Config = {
   projectName: 'FreeSecWiki',
 
   onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -30,25 +31,9 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/mw3693/FreeSecWiki/edit/main/',
         },
 
-        blog: {
-          showReadingTime: true,
-
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-
-          editUrl:
-            'https://github.com/mw3693/FreeSecWiki/edit/main/',
-
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
 
         theme: {
           customCss: './src/css/custom.css',
@@ -58,68 +43,31 @@ const config: Config = {
   ],
 
   themeConfig: {
-
     image: 'img/docusaurus-social-card.jpg',
 
     colorMode: {
       respectPrefersColorScheme: true,
     },
 
-
     navbar: {
-
       title: 'FreeSecWiki',
 
       logo: {
         alt: 'FreeSecWiki Logo',
         src: 'img/logo.svg',
       },
-
-
-      items: [
-
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Cybersecurity Wiki',
-        },
-
-
-        {
-          to: '/blog',
-          label: 'Articles',
-          position: 'left',
-        },
-
-
-        {
-          href: 'https://github.com/mw3693/FreeSecWiki',
-          label: 'GitHub',
-          position: 'right',
-        },
-
-      ],
     },
-
 
     footer: {
-
       style: 'dark',
-
-      copyright:
-        `© ${new Date().getFullYear()} FreeSecWiki. All rights reserved.`,
+      copyright: `© ${new Date().getFullYear()} FreeSecWiki. All rights reserved.`,
     },
-
 
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-
   } satisfies Preset.ThemeConfig,
-
 };
-
 
 export default config;
