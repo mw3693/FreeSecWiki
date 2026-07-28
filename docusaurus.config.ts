@@ -32,12 +32,25 @@ const config: Config = {
 
   plugins: [
     [
-      '@cmfcmf/docusaurus-search-local',
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       {
-        language: 'en',
+        hashed: true,
+
+        language: ['en'],
+
+        // Search only documentation content
         indexDocs: true,
         indexBlog: false,
         indexPages: true,
+
+        // Better search experience
+        highlightSearchTermsOnTargetPage: true,
+
+        // Number of results shown
+        searchResultLimits: 10,
+
+        // Text preview length
+        searchResultContextMaxLength: 80,
       },
     ],
   ],
