@@ -35,7 +35,6 @@ const config: Config = {
       '@cmfcmf/docusaurus-search-local',
       {
         language: 'en',
-        hashed: true,
         indexDocs: true,
         indexPages: true,
       },
@@ -73,15 +72,6 @@ const config: Config = {
         alt: 'FreeSecWiki Logo',
         src: 'img/logo.svg',
       },
-
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Documentation',
-        },
-      ],
     },
 
     footer: {
