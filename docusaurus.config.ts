@@ -35,7 +35,6 @@ const config: Config = {
       require.resolve('@cmfcmf/docusaurus-search-local'),
       {
         language: ['en'],
-        docsRouteBasePath: '/docs',
         indexDocs: true,
         indexBlog: false,
         indexPages: true,
