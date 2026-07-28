@@ -30,18 +30,6 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: [
-    [
-      require.resolve('@cmfcmf/docusaurus-search-local'),
-      {
-        language: ['en'],
-        indexDocs: true,
-        indexBlog: false,
-        indexPages: true,
-      },
-    ],
-  ],
-
   presets: [
     [
       'classic',
