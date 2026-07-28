@@ -1,7 +1,3 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-
 const config: Config = {
   title: 'FreeSecWiki',
   tagline: 'A Free Cybersecurity Encyclopedia',
@@ -30,6 +26,18 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    [
+      '@cmfcmf/docusaurus-search-local',
+      {
+        language: 'en',
+        hashed: true,
+        indexDocs: true,
+        indexPages: true,
+      },
+    ],
+  ],
+
   presets: [
     [
       'classic',
@@ -46,33 +54,3 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
-  themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
-
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
-
-    navbar: {
-      title: 'FreeSecWiki',
-
-      logo: {
-        alt: 'FreeSecWiki Logo',
-        src: 'img/logo.svg',
-      },
-    },
-
-    footer: {
-      style: 'dark',
-      copyright: `© ${new Date().getFullYear()} FreeSecWiki. All rights reserved.`,
-    },
-
-    prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
-    },
-  } satisfies Preset.ThemeConfig,
-};
-
-export default config;
