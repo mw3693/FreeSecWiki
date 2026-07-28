@@ -36,6 +36,7 @@ const config: Config = {
       {
         language: 'en',
         indexDocs: true,
+        indexBlog: false,
         indexPages: true,
       },
     ],
