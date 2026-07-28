@@ -18,7 +18,12 @@ const config: Config = {
   projectName: 'FreeSecWiki',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
 
   i18n: {
     defaultLocale: 'en',
@@ -26,7 +31,16 @@ const config: Config = {
   },
 
   plugins: [
-    require.resolve("@cmfcmf/docusaurus-search-local"),
+    [
+      require.resolve('@cmfcmf/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en'],
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: true,
+      },
+    ],
   ],
 
   presets: [
@@ -60,8 +74,6 @@ const config: Config = {
         alt: 'FreeSecWiki Logo',
         src: 'img/logo.svg',
       },
-
-      // البحث سيظهر هنا تلقائياً
     },
 
     footer: {
