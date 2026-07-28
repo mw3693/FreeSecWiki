@@ -25,6 +25,10 @@ const config: Config = {
     locales: ['en'],
   },
 
+  plugins: [
+    require.resolve("@cmfcmf/docusaurus-search-local"),
+  ],
+
   presets: [
     [
       'classic',
@@ -56,6 +60,8 @@ const config: Config = {
         alt: 'FreeSecWiki Logo',
         src: 'img/logo.svg',
       },
+
+      // البحث سيظهر هنا تلقائياً
     },
 
     footer: {
